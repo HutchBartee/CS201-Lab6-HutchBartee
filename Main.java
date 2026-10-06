@@ -81,7 +81,7 @@ public class Main {
                     ArrayFunctions.addTwoMatrices(arr1, arr2, outFile);
                 }
                 else{
-                    outFile.println("\n\tOne or both matrices are invalid.");
+                    outFile.println("\tOne or both matrices are invalid.");
                 }
  
             }

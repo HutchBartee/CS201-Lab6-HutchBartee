@@ -4,42 +4,41 @@ PROCESSING A SET OF MATRICES
 
 	PROCESSING FIRST MATRIX
 	1 1 
-
 	Cannot determine reflexive/symmetric: Invalid dimensions
+
 	PROCESSING SECOND MATRIX
 	Matrix contains invalid row/col values.
 
 	PROCESSING BOTH MATRICES
-
 	One or both matrices are invalid.
 
 
 PROCESSING A SET OF MATRICES
 
 	PROCESSING FIRST MATRIX
+	Length of matrix mismatch.
 
 	PROCESSING SECOND MATRIX
 	0 1 
 	0 1 
 	0 1 
-
 	Cannot determine reflexive/symmetric: Invalid dimensions
-	PROCESSING BOTH MATRICES
 
+	PROCESSING BOTH MATRICES
 	One or both matrices are invalid.
 
 
 PROCESSING A SET OF MATRICES
 
 	PROCESSING FIRST MATRIX
+	Matrix not binary.
 
 	PROCESSING SECOND MATRIX
 	0 1 
 	0 1 
-
 	Neither reflexive nor symmetric.
-	PROCESSING BOTH MATRICES
 
+	PROCESSING BOTH MATRICES
 	One or both matrices are invalid.
 
 
@@ -49,12 +48,12 @@ PROCESSING A SET OF MATRICES
 	1 0 1 0 
 	1 0 0 0 
 	1 0 0 0 
-
 	Cannot determine reflexive/symmetric: Invalid dimensions
+
 	PROCESSING SECOND MATRIX
+	Matrix not binary.
 
 	PROCESSING BOTH MATRICES
-
 	One or both matrices are invalid.
 
 
@@ -65,25 +64,25 @@ PROCESSING A SET OF MATRICES
 	0 1 0 0 
 	0 0 1 0 
 	0 0 0 1 
-
 	Both reflexive and symmetric.
+
 	PROCESSING SECOND MATRIX
+	Length of matrix mismatch.
 
 	PROCESSING BOTH MATRICES
-
 	One or both matrices are invalid.
 
 
 PROCESSING A SET OF MATRICES
 
 	PROCESSING FIRST MATRIX
+	Invalid matrix size.
 
 	PROCESSING SECOND MATRIX
 	1 1 1 1 0 
-
 	Cannot determine reflexive/symmetric: Invalid dimensions
-	PROCESSING BOTH MATRICES
 
+	PROCESSING BOTH MATRICES
 	One or both matrices are invalid.
 
 
@@ -93,17 +92,17 @@ PROCESSING A SET OF MATRICES
 	1 0 1 0 
 	1 0 0 0 
 	1 0 0 0 
-
 	Cannot determine reflexive/symmetric: Invalid dimensions
+
 	PROCESSING SECOND MATRIX
 	1 0 1 
 	1 0 1 
 	0 0 0 
 	1 1 1 
-
 	Cannot determine reflexive/symmetric: Invalid dimensions
+
 	PROCESSING BOTH MATRICES
-Unable to add matrices: size mismatch.
+	Unable to add matrices: size mismatch.
 
 
 PROCESSING A SET OF MATRICES
@@ -113,15 +112,15 @@ PROCESSING A SET OF MATRICES
 	0 1 0 0 
 	0 0 1 0 
 	0 0 0 1 
-
 	Both reflexive and symmetric.
+
 	PROCESSING SECOND MATRIX
 	1 1 0 0 
 	1 0 1 0 
 	0 1 0 1 
 	0 0 1 1 
-
 	Symmetric, not reflexive.
+
 	PROCESSING BOTH MATRICES
 	2 1 0 0 
 	1 1 1 0 

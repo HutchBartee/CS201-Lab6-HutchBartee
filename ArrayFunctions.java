@@ -37,6 +37,7 @@ public class ArrayFunctions{
 
         //test to make sure there are at least 2 tokens for row & col
         if(inputLine.length() < 2){
+            outFile.println("\tInvalid matrix size.");
             return -1;
         }
         
@@ -54,10 +55,12 @@ public class ArrayFunctions{
         //PART 2:  check that tokens.length has enough data for the matrix
         if((row >= 1 && row <= 5) && (col >= 1 && col <= 5)){
             if((row * col) != (tokens.length - 2)){
+                outFile.println("\tLength of matrix mismatch.");
                 return -1;
             }
         }
         else{
+            outFile.println("\tInvalid matrix size.");
             return -1;
         }
 
@@ -66,6 +69,7 @@ public class ArrayFunctions{
         //PART 2:  verfiy that each value in token is isBinary
         for(int i = 2; i < tokens.length; i++){
             if(isBinary(tokens[i]) == false){
+                outFile.println("\tMatrix not binary.");
                 return -1;
             }
         }
@@ -109,7 +113,7 @@ public class ArrayFunctions{
         int rows = arr1.size();
         int cols = arr1.get(0).size();
         if(rows != cols){
-            outFile.print("\n\tCannot determine reflexive/symmetric: Invalid dimensions");
+            outFile.print("\tCannot determine reflexive/symmetric: Invalid dimensions\n");
             return;
         }
         //Check for Reflexive
@@ -139,16 +143,16 @@ public class ArrayFunctions{
 
         //Print results
         if(reflexive == 1 && symmetric == 1){
-            outFile.print("\n\tBoth reflexive and symmetric.");
+            outFile.print("\tBoth reflexive and symmetric.\n");
         }
         else if(reflexive == 1){
-            outFile.print("\n\tReflexive, not symmetric.");
+            outFile.print("\tReflexive, not symmetric.\n");
         }
         else if(symmetric == 1){
-            outFile.print("\n\tSymmetric, not reflexive.");
+            outFile.print("\tSymmetric, not reflexive.\n");
         }
         else{
-            outFile.print("\n\tNeither reflexive nor symmetric.");
+            outFile.print("\tNeither reflexive nor symmetric.\n");
         }
     }
 
@@ -168,7 +172,7 @@ public class ArrayFunctions{
         int rows2 = arr2.size();
         int cols2 = arr2.get(0).size();
         if((rows1 != rows2) || (cols1 != cols2)){
-            outFile.println("Unable to add matrices: size mismatch.");
+            outFile.println("\tUnable to add matrices: size mismatch.");
             return;
         }
         //add corresponding elements & prints the result to the output file
