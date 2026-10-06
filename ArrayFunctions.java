@@ -36,7 +36,9 @@ public class ArrayFunctions{
         String[] tokens = inputLine.trim().split(" ");
 
         //test to make sure there are at least 2 tokens for row & col
- 
+        if(inputLine.length() < 2){
+            return -1;
+        }
         
         //use position [0] for number of rows and position[1] for number of cols
         int row, col;
@@ -50,14 +52,33 @@ public class ArrayFunctions{
 
         //PART 2:  check the row & col values are between 1 and 5 (inclusive) 
         //PART 2:  check that tokens.length has enough data for the matrix
-
+        if((row >= 1 && row <= 5) && (col >= 1 && col <= 5)){
+            if((row * col) != (tokens.length - 2)){
+                return -1;
+            }
+        }
+        else{
+            return -1;
+        }
 
         //starting at position 2 in tokens, read remaining characters
         //see lecture example for loading individual entries in tokens into the ArrayList
         //PART 2:  verfiy that each value in token is isBinary
-         
+        for(int i = 2; i < tokens.length; i++){
+            if(isBinary(tokens[i]) == false){
+                return -1;
+            }
+        }
 
-        return 0;
+        for(int tempR = 0; tempR < row; tempR++){
+            ArrayList<Integer> rowVals = new ArrayList<Integer>();
+            for(int tempC = 0; tempC < col; tempC++){
+                rowVals.add(Integer.parseInt(tokens[2 + (tempR * col) + tempC]));
+            }
+            arr1.add(rowVals);
+        }
+
+        return 1;
     }
 
 
@@ -66,10 +87,15 @@ public class ArrayFunctions{
     public static void printArrayList(ArrayList<ArrayList<Integer>> arr1, 
                                       PrintWriter outFile) {
         //print 2-D ArrayList
-
+        for(ArrayList<Integer> row : arr1){
+            outFile.print("\t");
+            for(Integer value : row){
+                outFile.print(value + " ");
+            }
+            outFile.println();
+        }
     }
 
-    
     //PRE:  Accepts one 2 dimensional ArrayList that has been loaded with proper values
     //      and the output file
     //POST: Deterimines if the number of rows = number of columns for this ArrayList
@@ -80,13 +106,50 @@ public class ArrayFunctions{
                                                   PrintWriter outFile) {
    
         //If the number of rows != number of columns, print message & return
-
+        int rows = arr1.size();
+        int cols = arr1.get(0).size();
+        if(rows != cols){
+            outFile.print("\n\tCannot determine reflexive/symmetric: Invalid dimensions");
+            return;
+        }
         //Check for Reflexive
-        
+        int reflexive = 0;
+        int ver = 0;
+        for(int i = 0; i < arr1.size(); i++){
+            if(arr1.get(i).get(i) == 1){
+                ver += 1;
+            }
+        }
+        if(ver == rows){
+            reflexive = 1;
+        }
         //Check for Symmetric
-        
+        int symmetric = 0;
+        int ver2 = 0;
+        for(int i = 0; i < arr1.size(); i++){
+            for(int j = 0; j < arr1.size(); j++){
+                if(arr1.get(i).get(j) == arr1.get(j).get(i)){
+                    ver2 += 1;
+                }
+            }
+        }
+        if(ver2 == rows * cols){
+            symmetric = 1;
+        }
+
         //Print results
-        
+        if(reflexive == 1 && symmetric == 1){
+            outFile.print("\n\tBoth reflexive and symmetric.");
+        }
+        else if(reflexive == 1){
+            outFile.print("\n\tReflexive, not symmetric.");
+        }
+        else if(symmetric == 1){
+            outFile.print("\n\tSymmetric, not reflexive.");
+        }
+        else{
+            outFile.print("\n\tNeither reflexive nor symmetric.");
+        }
     }
 
     //PRE:  Accepts two 2 dimensional ArrayLists that have been loaded with proper values
@@ -100,8 +163,22 @@ public class ArrayFunctions{
                                       PrintWriter outFile) {
         //verify if matrices can be added 
         //If the matrix sizes do not match print message & return
-
+        int rows1 = arr1.size();
+        int cols1 = arr1.get(0).size();
+        int rows2 = arr2.size();
+        int cols2 = arr2.get(0).size();
+        if((rows1 != rows2) || (cols1 != cols2)){
+            outFile.println("Unable to add matrices: size mismatch.");
+            return;
+        }
         //add corresponding elements & prints the result to the output file
- 
+        for(int i = 0; i < rows1; i++){
+            outFile.print("\t");
+            for(int j = 0; j < cols1; j++){
+                int added = arr1.get(i).get(j) + arr2.get(i).get(j);
+                outFile.print(added + " ");
+            }
+            outFile.println();
+        }
     }
 }

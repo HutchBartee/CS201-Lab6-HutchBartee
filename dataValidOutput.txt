@@ -3,52 +3,115 @@
 PROCESSING A SET OF MATRICES
 
 	PROCESSING FIRST MATRIX
+	1 1 0 
+	1 1 0 
 
+	Cannot determine reflexive/symmetric: Invalid dimensions
 	PROCESSING SECOND MATRIX
+	0 1 
+	0 1 
+	0 1 
 
+	Cannot determine reflexive/symmetric: Invalid dimensions
 	PROCESSING BOTH MATRICES
+Unable to add matrices: size mismatch.
 
 
 PROCESSING A SET OF MATRICES
 
 	PROCESSING FIRST MATRIX
+	0 1 1 0 
+	0 1 1 0 
+	0 1 1 1 
 
+	Cannot determine reflexive/symmetric: Invalid dimensions
 	PROCESSING SECOND MATRIX
+	0 0 1 1 
+	1 1 0 1 
+	1 0 0 1 
 
+	Cannot determine reflexive/symmetric: Invalid dimensions
 	PROCESSING BOTH MATRICES
+	0 1 2 1 
+	1 2 1 1 
+	1 1 1 2 
 
 
 PROCESSING A SET OF MATRICES
 
 	PROCESSING FIRST MATRIX
+	1 1 0 
+	0 1 0 
+	1 0 1 
 
+	Reflexive, not symmetric.
 	PROCESSING SECOND MATRIX
+	1 0 1 
+	0 1 0 
+	1 0 0 
 
+	Symmetric, not reflexive.
 	PROCESSING BOTH MATRICES
+	2 1 1 
+	0 2 0 
+	2 0 1 
 
 
 PROCESSING A SET OF MATRICES
 
 	PROCESSING FIRST MATRIX
+	1 0 1 0 
+	1 0 0 0 
+	1 0 0 0 
 
+	Cannot determine reflexive/symmetric: Invalid dimensions
 	PROCESSING SECOND MATRIX
+	1 0 1 
+	1 0 1 
+	0 0 0 
+	1 1 1 
 
+	Cannot determine reflexive/symmetric: Invalid dimensions
 	PROCESSING BOTH MATRICES
+Unable to add matrices: size mismatch.
 
 
 PROCESSING A SET OF MATRICES
 
 	PROCESSING FIRST MATRIX
+	1 0 0 0 
+	0 1 0 0 
+	0 0 1 0 
+	0 0 0 1 
 
+	Both reflexive and symmetric.
 	PROCESSING SECOND MATRIX
+	1 1 0 0 
+	1 0 1 0 
+	0 1 0 1 
+	0 0 1 1 
 
+	Symmetric, not reflexive.
 	PROCESSING BOTH MATRICES
+	2 1 0 0 
+	1 1 1 0 
+	0 1 1 1 
+	0 0 1 2 
 
 
 PROCESSING A SET OF MATRICES
 
 	PROCESSING FIRST MATRIX
+	1 1 1 1 1 
+	0 1 1 1 1 
+	0 0 1 1 1 
+	0 0 0 1 1 
+	0 0 0 0 1 
 
+	Reflexive, not symmetric.
 	PROCESSING SECOND MATRIX
+	1 1 1 1 0 
 
+	Cannot determine reflexive/symmetric: Invalid dimensions
 	PROCESSING BOTH MATRICES
+Unable to add matrices: size mismatch.

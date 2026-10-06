@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
-
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -47,22 +47,29 @@ public class Main {
                 String inLine1 = input.nextLine();
                 String inLine2 = input.nextLine();
                 
-
                 //declare two 2-D ArrayLists
-
+                ArrayList<ArrayList<Integer>> arr1 = new ArrayList<ArrayList<Integer>>();
+                ArrayList<ArrayList<Integer>> arr2 = new ArrayList<ArrayList<Integer>>();
                 outFile.println("\n\nPROCESSING A SET OF MATRICES");
 
                 outFile.println("\n\tPROCESSING FIRST MATRIX");
-                
                 //verify 2-D Matrix
                 //if valid, print & process the Matrix
                 //if not, print a message
-
+                int result1 = ArrayFunctions.verifyArrayList(inLine1, arr1, outFile);
+                if(result1 == 1){
+                    ArrayFunctions.printArrayList(arr1, outFile);
+                    ArrayFunctions.processArrayList(arr1, outFile);
+                }
                 outFile.println("\n\tPROCESSING SECOND MATRIX");
- 
                 //verify 2-D Matrix
                 //if valid, print & process the Matrix
                 //if not, print a message
+                int result2 = ArrayFunctions.verifyArrayList(inLine2, arr2, outFile);
+                if(result2 == 1){
+                    ArrayFunctions.printArrayList(arr2, outFile);
+                    ArrayFunctions.processArrayList(arr2, outFile);
+                }
 
                 outFile.println("\n\tPROCESSING BOTH MATRICES");
 
@@ -70,6 +77,12 @@ public class Main {
                 //PART2: if both are valid and the sizes are compatible, multiply the matrices
                 //if one of the matrices is not valid, print a message
                 //if the sizes are not compatible, print a message
+                if(result1 == 1 && result2 ==1){
+                    ArrayFunctions.addTwoMatrices(arr1, arr2, outFile);
+                }
+                else{
+                    outFile.println("\n\tOne or both matrices are invalid.");
+                }
  
             }
            input.close();
